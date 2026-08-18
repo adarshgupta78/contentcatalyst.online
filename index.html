@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Catalyst | Algorithmic Short-Form Video</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+        html { scroll-behavior: smooth; }
+        
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        .marquee-content {
+            display: flex;
+            animation: scroll 20s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 antialiased selection:bg-blue-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-extrabold tracking-tight text-white group">
+                Content<span class="text-blue-500 transition-colors duration-300 group-hover:text-cyan-400">Catalyst.</span>
+            </a>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="#problem" class="hover:text-white hover:-translate-y-0.5 transition-all duration-300">The Problem</a>
+                <a href="#capabilities" class="hover:text-white hover:-translate-y-0.5 transition-all duration-300">Capabilities</a>
+                <a href="#proof" class="hover:text-white hover:-translate-y-0.5 transition-all duration-300">Proof</a>
+                <a href="#pricing" class="hover:text-white hover:-translate-y-0.5 transition-all duration-300">Pricing</a>
+            </div>
+            <a href="#contact" class="px-5 py-2.5 text-sm font-bold text-white bg-blue-600 rounded-full hover:bg-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] hover:scale-105 transition-all duration-300">
+                Free Sample Edit
+            </a>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 flex flex-col items-center text-center px-6 overflow-hidden bg-grid-pattern">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] animate-float"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-600/20 rounded-full blur-[120px] animate-float" style="animation-delay: 2s;"></div>
+
+        <div class="max-w-4xl mx-auto space-y-8 relative z-10 reveal">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-bold tracking-widest text-blue-400 uppercase bg-blue-900/20 rounded-full border border-blue-500/30 hover:border-blue-400 transition-colors cursor-default">
+                <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                Stop Losing Reach
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
+                Dominate the <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600">Algorithm.</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 font-medium">
+                We transform your raw footage into high-retention, short-form video that commands attention and drives traffic. No agency fluff. Just assets that convert.
+            </p>
+            <div class="pt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 text-lg font-bold text-gray-950 bg-white rounded-xl hover:scale-110 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] transition-all duration-300">
+                    Claim Free Edit
+                </a>
+                <a href="#proof" class="w-full sm:w-auto px-8 py-4 text-lg font-bold text-white bg-transparent border border-gray-600 rounded-xl hover:bg-gray-800 hover:border-gray-400 hover:-translate-y-1 transition-all duration-300">
+                    See the Proof
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Scrolling Marquee -->
+    <div class="border-y border-gray-800 bg-gray-900/80 py-6 overflow-hidden flex relative">
+        <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-900 to-transparent z-10"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-900 to-transparent z-10"></div>
+        <div class="marquee-content flex whitespace-nowrap gap-16 items-center px-8 text-xl font-black text-gray-700 tracking-widest uppercase">
+            <span>Real Estate</span> • <span>E-Commerce</span> • <span>Food & Beverage</span> • <span>Consultants</span> • <span>Tech Startups</span> • <span>Real Estate</span> • <span>E-Commerce</span> • <span>Food & Beverage</span> • <span>Consultants</span> • <span>Tech Startups</span>
+        </div>
+    </div>
+
+    <!-- 2. The Problem -->
+    <section class="py-24 px-6 bg-gray-950" id="problem">
+        <div class="max-w-6xl mx-auto reveal">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Posting everyday is useless if no one is watching.</h2>
+                <p class="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto">The algorithm doesn't care how good your business is; it only cares about retention. If you are managing your own editing, you are likely hitting these roadblocks:</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- Problem 1 -->
+                <div class="p-6 bg-gray-900 border border-red-900/30 rounded-2xl group hover:-translate-y-2 hover:border-red-500/50 transition-all duration-300">
+                    <div class="w-12 h-12 bg-red-900/20 text-red-500 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <h3 class="text-white font-bold text-xl mb-3">The 200-View Jail</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Slow intros and dead air kill retention. Viewers scroll past in 1.5 seconds, signaling the algorithm to immediately bury your post.</p>
+                </div>
+                
+                <!-- Problem 2 -->
+                <div class="p-6 bg-gray-900 border border-red-900/30 rounded-2xl group hover:-translate-y-2 hover:border-red-500/50 transition-all duration-300">
+                    <div class="w-12 h-12 bg-red-900/20 text-red-500 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-white font-bold text-xl mb-3">The Time Drain</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">You waste hours fighting with mobile editing apps, pulling you away from actually closing deals or running your daily operations.</p>
+                </div>
+                
+                <!-- Problem 3 -->
+                <div class="p-6 bg-gray-900 border border-red-900/30 rounded-2xl group hover:-translate-y-2 hover:border-red-500/50 transition-all duration-300">
+                    <div class="w-12 h-12 bg-red-900/20 text-red-500 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    </div>
+                    <h3 class="text-white font-bold text-xl mb-3">Content Burnout</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">You post enthusiastically for a week, then vanish for a month because the DIY production process is too exhausting to maintain.</p>
+                </div>
+                
+                <!-- Problem 4 -->
+                <div class="p-6 bg-gray-900 border border-red-900/30 rounded-2xl group hover:-translate-y-2 hover:border-red-500/50 transition-all duration-300">
+                    <div class="w-12 h-12 bg-red-900/20 text-red-500 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-white font-bold text-xl mb-3">Missing Visuals</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">You lack a professional camera setup or enough b-roll footage to keep your feed looking premium, lowering trust with prospects.</p>
+                </div>
+            </div>
+
+            <!-- The Solution Banner -->
+            <div class="p-8 md:p-10 bg-blue-900/10 border border-blue-900/40 rounded-[2rem] relative overflow-hidden group hover:border-blue-500/50 hover:shadow-[0_0_40px_rgba(37,99,235,0.15)] transition-all duration-500 text-center md:text-left flex flex-col md:flex-row items-center gap-8">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-blue-500/20 transition-colors duration-700"></div>
+                <div class="flex-shrink-0">
+                    <div class="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center shadow-[0_0_30px_rgba(37,99,235,0.4)] group-hover:scale-110 transition-transform duration-500">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                </div>
+                <div class="relative z-10">
+                    <h3 class="text-white font-black text-2xl md:text-3xl mb-3 group-hover:text-cyan-300 transition-colors">The Catalyst Solution</h3>
+                    <p class="text-gray-400 text-lg">We remove the friction. Aggressive 3-second hooks, algorithmic L-cuts, AI-generated fillers, and trending audio mapping that forces the platform to push your content. You just record and upload.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Capabilities Section -->
+    <section class="py-24 px-6 bg-gray-900 border-t border-gray-800" id="capabilities">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Beyond Simple Cuts.</h2>
+                <p class="text-gray-400 text-lg max-w-2xl">We don't just trim dead air. We engineer visual experiences designed specifically for the modern social media landscape.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Cap 1 -->
+                <div class="bg-gray-950 p-8 rounded-3xl border border-gray-800 hover:border-blue-500/50 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(37,99,235,0.1)] transition-all duration-300 reveal group">
+                    <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center mb-6 border border-gray-700 text-gray-400 group-hover:bg-blue-900/30 group-hover:border-blue-500/30 group-hover:text-blue-400 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Hook Engineering</h3>
+                    <p class="text-gray-400 group-hover:text-gray-300 transition-colors">The first 3 seconds dictate your reach. We use rapid visual pattern interrupts and aggressive pacing to secure the view.</p>
+                </div>
+
+                <!-- Cap 2 -->
+                <div class="bg-gray-950 p-8 rounded-3xl border border-gray-800 hover:border-purple-500/50 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(168,85,247,0.1)] transition-all duration-300 reveal group" style="transition-delay: 100ms;">
+                    <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center mb-6 border border-gray-700 text-gray-400 group-hover:bg-purple-900/30 group-hover:border-purple-500/30 group-hover:text-purple-400 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Audio Arbitrage</h3>
+                    <p class="text-gray-400 group-hover:text-gray-300 transition-colors">We map edits directly to the beat of trending US audio tracks before they peak, signaling the algorithm to push your content.</p>
+                </div>
+
+                <!-- Cap 3 -->
+                <div class="bg-gray-950 p-8 rounded-3xl border border-gray-800 hover:border-cyan-500/50 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(6,182,212,0.1)] transition-all duration-300 reveal group" style="transition-delay: 200ms;">
+                    <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center mb-6 border border-gray-700 text-gray-400 group-hover:bg-cyan-900/30 group-hover:border-cyan-500/30 group-hover:text-cyan-400 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Advanced AI Assets</h3>
+                    <p class="text-gray-400 group-hover:text-gray-300 transition-colors">Missing b-roll? We generate high-end visual fillers utilizing precise prompts—replicating the look of a Sony A1 with an 85mm f1.4 lens or styling with 90s aesthetic filters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Before & After Proof -->
+    <section class="py-24 px-6 relative bg-gray-950 border-t border-gray-900" id="proof">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">The Proof is in the Pacing</h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">Hover over the edited video to see the difference.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center reveal">
+                <!-- Bad Example -->
+                <div class="bg-gray-900 p-4 md:p-6 rounded-3xl border border-gray-800 shadow-xl transition-all duration-500 hover:border-gray-600">
+                    <div class="flex items-center justify-between mb-4 px-2">
+                        <h3 class="text-lg font-semibold text-gray-400">The Standard Post</h3>
+                        <span class="text-xs text-red-400 uppercase tracking-widest font-bold bg-red-900/20 px-3 py-1 rounded-full border border-red-900/50">Low Retention</span>
+                    </div>
+                    <div class="aspect-[9/16] bg-gray-800 rounded-2xl overflow-hidden relative border border-gray-700">
+                        <video class="w-full h-full object-cover opacity-60 grayscale-[30%]" autoplay loop muted playsinline>
+                            <source src="bad-video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Good Example -->
+                <div class="bg-gray-800 p-4 md:p-6 rounded-3xl border border-blue-500/40 shadow-[0_0_40px_rgba(59,130,246,0.15)] relative transform transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_0_60px_rgba(59,130,246,0.3)] hover:-translate-y-4 group">
+                    <div class="absolute -top-4 -right-4 bg-gray-900 border border-blue-500 p-4 rounded-xl shadow-2xl z-20 group-hover:bg-blue-900 transition-colors duration-300">
+                        <p class="text-xs text-gray-300 font-bold uppercase tracking-wider mb-1">Avg Retention</p>
+                        <p class="text-2xl font-black text-white group-hover:scale-110 transition-transform duration-300">+ 340%</p>
+                    </div>
+                    <div class="flex items-center justify-between mb-4 px-2 relative z-10">
+                        <h3 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">Content Catalyst Edit</h3>
+                        <span class="text-xs text-blue-300 uppercase tracking-widest font-bold bg-blue-900/30 px-3 py-1 rounded-full border border-blue-500/50 group-hover:bg-blue-600 group-hover:text-white transition-all">Viral Pacing</span>
+                    </div>
+                    <div class="aspect-[9/16] bg-gray-900 rounded-2xl overflow-hidden relative border border-gray-700 z-10">
+                        <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+                            <source src="good-video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. How It Works (Process) -->
+    <section class="py-24 px-6 bg-gray-900 border-y border-gray-800" id="process">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">A Frictionless Process</h2>
+                <p class="text-gray-400">Zero agency meetings. Just high-converting assets delivered to your inbox.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 relative reveal">
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-gray-800 via-blue-900 to-gray-800 -translate-y-1/2 z-0"></div>
+
+                <div class="p-8 rounded-3xl bg-gray-950 border border-gray-800 relative z-10 shadow-xl hover:-translate-y-3 hover:border-gray-600 transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-gray-800 rounded-2xl flex items-center justify-center text-2xl font-black text-white mb-6 border border-gray-700 group-hover:bg-gray-700 transition-colors">01</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Upload Footage</h3>
+                    <p class="text-gray-400">Drop your raw, unedited clips straight from your phone into a shared cloud folder.</p>
+                </div>
+                
+                <div class="p-8 rounded-3xl bg-gray-950 border border-blue-500/30 relative z-10 shadow-[0_0_30px_rgba(37,99,235,0.1)] hover:-translate-y-3 hover:shadow-[0_0_40px_rgba(37,99,235,0.3)] hover:border-blue-400 transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-2xl font-black text-white mb-6 shadow-lg shadow-blue-500/50 group-hover:scale-110 transition-transform">02</div>
+                    <h3 class="text-xl font-bold text-white mb-3">We Engineer It</h3>
+                    <p class="text-gray-400">We apply algorithmic pacing, AI visual generation, dynamic captions, and trending audio.</p>
+                </div>
+                
+                <div class="p-8 rounded-3xl bg-gray-950 border border-gray-800 relative z-10 shadow-xl hover:-translate-y-3 hover:border-gray-600 transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-gray-800 rounded-2xl flex items-center justify-center text-2xl font-black text-white mb-6 border border-gray-700 group-hover:bg-gray-700 transition-colors">03</div>
+                    <h3 class="text-xl font-bold text-white mb-3">You Post & Grow</h3>
+                    <p class="text-gray-400">Within 48 hours, you receive polished assets ready to post and drive traffic.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 3-Tier Pricing -->
+    <section class="py-32 px-6 relative bg-gray-950" id="pricing">
+        <div class="absolute inset-0 bg-blue-900/5 blur-[150px] animate-pulse"></div>
+        <div class="max-w-6xl mx-auto relative z-10 reveal">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Scalable Growth Packages</h2>
+                <p class="text-gray-400 text-lg">Productized editing with zero hidden fees. Cancel anytime.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                
+                <!-- Tier 1: Starter -->
+                <div class="bg-gray-900 p-8 rounded-[2rem] border border-gray-800 hover:-translate-y-2 transition-all duration-300 group">
+                    <h3 class="text-xl font-bold text-gray-300 mb-2">The Spark</h3>
+                    <p class="text-sm text-gray-500 mb-6">Perfect for testing the waters.</p>
+                    <div class="flex items-baseline gap-1 mb-8">
+                        <span class="text-4xl font-extrabold text-white">$199</span>
+                        <span class="text-gray-500 font-medium">/mo</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-gray-400 text-sm">
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✔</span> 3 High-Retention Videos</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✔</span> Standard Pacing & Captions</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✔</span> Trending Audio Selection</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✔</span> 72-Hour Turnaround</li>
+                    </ul>
+                    <a href="#" class="block w-full py-3 rounded-xl bg-gray-800 text-white font-bold text-center group-hover:bg-gray-700 transition-colors">Start Building</a>
+                </div>
+
+                <!-- Tier 2: The Growth (Highlighted) -->
+                <div class="bg-gray-900/90 backdrop-blur-xl p-10 rounded-[2rem] border-2 border-blue-500 shadow-[0_0_40px_rgba(37,99,235,0.2)] md:scale-105 transform hover:-translate-y-3 transition-all duration-300 relative group">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full shadow-lg">Most Popular</div>
+                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">The Growth</h3>
+                    <p class="text-sm text-gray-400 mb-6">The proven algorithmic anchor.</p>
+                    <div class="flex items-baseline gap-1 mb-8 pb-8 border-b border-gray-800">
+                        <span class="text-5xl font-black text-white">$300</span>
+                        <span class="text-gray-500 font-medium">/mo</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-gray-300 font-medium">
+                        <li class="flex items-center gap-3"><span class="text-blue-400">✦</span> <strong>5 High-Retention Videos</strong></li>
+                        <li class="flex items-center gap-3"><span class="text-blue-400">✦</span> Algorithmic Hook Engineering</li>
+                        <li class="flex items-center gap-3"><span class="text-blue-400">✦</span> Advanced AI Enhancements</li>
+                        <li class="flex items-center gap-3"><span class="text-blue-400">✦</span> Priority 48-Hour Turnaround</li>
+                    </ul>
+                    <a href="#" class="block w-full py-4 rounded-xl bg-white text-gray-950 font-extrabold text-lg text-center hover:bg-blue-600 hover:text-white transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]">Launch Campaign</a>
+                </div>
+
+                <!-- Tier 3: Catalyst -->
+                <div class="bg-gray-900 p-8 rounded-[2rem] border border-gray-800 hover:-translate-y-2 transition-all duration-300 group">
+                    <h3 class="text-xl font-bold text-gray-300 mb-2">The Catalyst</h3>
+                    <p class="text-sm text-gray-500 mb-6">For aggressive digital scaling.</p>
+                    <div class="flex items-baseline gap-1 mb-8">
+                        <span class="text-4xl font-extrabold text-white">$599</span>
+                        <span class="text-gray-500 font-medium">/mo</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-gray-400 text-sm">
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✔</span> 10 Premium Videos</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✔</span> Full AI B-Roll Generation</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✔</span> 24-Hour Express Turnaround</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✔</span> 1x Monthly Strategy Call</li>
+                    </ul>
+                    <a href="#" class="block w-full py-3 rounded-xl bg-gray-800 text-white font-bold text-center group-hover:bg-gray-700 transition-colors">Scale Faster</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Expanded Interactive FAQ -->
+    <section class="py-24 px-6 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-3xl mx-auto reveal">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
+            
+            <div class="space-y-4">
+                <details class="group bg-gray-950 border border-gray-800 p-6 rounded-2xl cursor-pointer hover:border-gray-600 transition-colors">
+                    <summary class="flex justify-between items-center font-bold text-lg text-white">
+                        <span>How do I send you footage?</span>
+                        <span class="transition group-open:rotate-180 text-blue-500 group-hover:scale-125">▼</span>
+                    </summary>
+                    <p class="text-gray-400 mt-4 leading-relaxed">We set up a private, shared Google Drive for you. You drop clips from your phone, and our team pulls the footage to begin editing immediately.</p>
+                </details>
+
+                <details class="group bg-gray-950 border border-gray-800 p-6 rounded-2xl cursor-pointer hover:border-gray-600 transition-colors">
+                    <summary class="flex justify-between items-center font-bold text-lg text-white">
+                        <span>What if I don't have enough time to film?</span>
+                        <span class="transition group-open:rotate-180 text-blue-500 group-hover:scale-125">▼</span>
+                    </summary>
+                    <p class="text-gray-400 mt-4 leading-relaxed">We supplement your feed using advanced AI generation (like high-end camera matching and 90s aesthetic filters) to create stunning visual assets without you ever pressing record.</p>
+                </details>
+
+                <details class="group bg-gray-950 border border-gray-800 p-6 rounded-2xl cursor-pointer hover:border-gray-600 transition-colors">
+                    <summary class="flex justify-between items-center font-bold text-lg text-white">
+                        <span>Do you manage my social media accounts?</span>
+                        <span class="transition group-open:rotate-180 text-blue-500 group-hover:scale-125">▼</span>
+                    </summary>
+                    <p class="text-gray-400 mt-4 leading-relaxed">No. We operate as a pure creative studio. We deliver the optimized video files directly to you, so you retain full control over posting, community engagement, and security.</p>
+                </details>
+
+                <details class="group bg-gray-950 border border-gray-800 p-6 rounded-2xl cursor-pointer hover:border-gray-600 transition-colors">
+                    <summary class="flex justify-between items-center font-bold text-lg text-white">
+                        <span>Are there long-term contracts?</span>
+                        <span class="transition group-open:rotate-180 text-blue-500 group-hover:scale-125">▼</span>
+                    </summary>
+                    <p class="text-gray-400 mt-4 leading-relaxed">Absolutely not. Our service is a month-to-month subscription. We believe our product should justify its cost every month. You can pause or cancel at any time.</p>
+                </details>
+
+                <details class="group bg-gray-950 border border-gray-800 p-6 rounded-2xl cursor-pointer hover:border-gray-600 transition-colors">
+                    <summary class="flex justify-between items-center font-bold text-lg text-white">
+                        <span>How do revisions work?</span>
+                        <span class="transition group-open:rotate-180 text-blue-500 group-hover:scale-125">▼</span>
+                    </summary>
+                    <p class="text-gray-400 mt-4 leading-relaxed">Each video includes one round of standard revisions. If we misspelled a word or you want a different audio track, we fix it rapidly within 24 hours.</p>
+                </details>
+
+                <details class="group bg-gray-950 border border-gray-800 p-6 rounded-2xl cursor-pointer hover:border-gray-600 transition-colors">
+                    <summary class="flex justify-between items-center font-bold text-lg text-white">
+                        <span>How do payments work?</span>
+                        <span class="transition group-open:rotate-180 text-blue-500 group-hover:scale-125">▼</span>
+                    </summary>
+                    <p class="text-gray-400 mt-4 leading-relaxed">We use Stripe for all processing. Your monthly retainer is billed automatically on the same day every month via credit card, making the entire process frictionless.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Footer / Final CTA -->
+    <footer class="py-24 px-6 bg-gray-950 relative overflow-hidden" id="contact">
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+        
+        <div class="max-w-2xl mx-auto text-center space-y-8 relative z-10 reveal">
+            <h2 class="text-4xl font-extrabold text-white">Still on the fence? Let us prove it.</h2>
+            <p class="text-gray-400 text-lg">Send us one piece of raw footage. We will edit it for free. If you hate it, it costs you nothing.</p>
+            <div class="pt-4">
+                <a href="mailto:your@email.com?subject=Free%20Sample%20Edit" class="inline-flex items-center gap-3 px-8 py-4 text-lg font-bold text-white transition-all duration-300 bg-transparent border border-gray-500 rounded-xl hover:border-white hover:bg-white hover:text-gray-950 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                    Claim My Free Edit
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+        </div>
+        
+        <div class="mt-32 max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center border-t border-gray-800 pt-8 text-sm text-gray-500 reveal">
+            <p class="font-bold text-gray-400 text-xl group cursor-pointer hover:text-white transition-colors">
+                Content<span class="text-blue-500 group-hover:text-cyan-400 transition-colors">Catalyst.</span>
+            </p>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white hover:-translate-y-1 transition-all">Instagram</a>
+                <a href="#" class="hover:text-white hover:-translate-y-1 transition-all">LinkedIn</a>
+                <a href="#" class="hover:text-white hover:-translate-y-1 transition-all">Terms</a>
+            </div>
+            <p class="mt-4 md:mt-0">&copy; 2026 Content Catalyst. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll Reveal JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll(".reveal").forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
